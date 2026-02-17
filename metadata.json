@@ -1,0 +1,7 @@
+{
+  "name": "一字千金 ‧ 派對爭霸系統 (Party Word Game System)",
+  "description": "A multi-device word game system featuring a Host display, Admin controller, and Player handwriting pads, simulating a TV game show experience.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
