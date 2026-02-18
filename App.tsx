@@ -11,76 +11,76 @@ const App: React.FC = () => {
 
   if (!role) {
     return (
-      <div className="flex flex-col items-center justify-center min-h-screen bg-slate-950 text-white p-6 relative overflow-hidden">
+      <div className="flex flex-col items-center min-h-[100dvh] bg-slate-950 text-white p-6 relative overflow-y-auto overflow-x-hidden">
         {/* 背景裝飾 */}
-        <div className="absolute top-0 left-0 w-full h-full opacity-20 pointer-events-none">
-          <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-blue-600 rounded-full blur-[120px]"></div>
-          <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-purple-600 rounded-full blur-[120px]"></div>
+        <div className="fixed top-0 left-0 w-full h-full opacity-20 pointer-events-none">
+          <div className="absolute top-[-10%] left-[-10%] w-[60%] h-[60%] bg-blue-600 rounded-full blur-[120px]"></div>
+          <div className="absolute bottom-[-10%] right-[-10%] w-[60%] h-[60%] bg-purple-600 rounded-full blur-[120px]"></div>
         </div>
 
-        <div className="z-10 text-center mb-16">
-          <h1 className="text-7xl md:text-8xl font-black mb-4 gold-text tracking-tighter drop-shadow-2xl italic">一字千金</h1>
-          <div className="h-1 w-64 bg-gradient-to-r from-transparent via-yellow-500 to-transparent mx-auto mb-2"></div>
-          <p className="text-xl text-blue-300 font-bold tracking-[0.5em] uppercase">Party Word Game System</p>
+        <div className="z-10 text-center mb-10 mt-10 shrink-0">
+          <h1 className="text-6xl md:text-8xl font-black mb-2 gold-text tracking-tighter drop-shadow-2xl italic">一字千金</h1>
+          <div className="h-1 w-48 bg-gradient-to-r from-transparent via-yellow-500 to-transparent mx-auto mb-2"></div>
+          <p className="text-xs md:text-xl text-blue-300 font-bold tracking-[0.3em] uppercase">Party Word Game System</p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full max-w-5xl z-10">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-5xl z-10 mb-20">
           {/* Host Card */}
           <button 
             onClick={() => setRole(AppRole.HOST)}
-            className="group relative flex flex-col items-center p-10 bg-slate-900 border-2 border-blue-500/30 rounded-3xl hover:border-blue-400 transition-all hover:-translate-y-2 hover:shadow-[0_0_40px_rgba(59,130,246,0.3)]"
+            className="group relative flex flex-col items-center p-8 bg-slate-900/80 border-2 border-blue-500/30 rounded-[32px] hover:border-blue-400 transition-all active:scale-95 shadow-xl"
           >
-            <div className="text-7xl mb-6 group-hover:scale-110 transition-transform">🖥️</div>
-            <span className="text-2xl font-black text-blue-100">主控顯示端</span>
-            <p className="text-blue-400/60 text-sm mt-3">適用於大螢幕投影</p>
-            <div className="absolute inset-0 rounded-3xl bg-gradient-to-b from-blue-500/5 to-transparent pointer-events-none"></div>
+            <div className="text-6xl mb-4">🖥️</div>
+            <span className="text-xl font-black text-blue-100 uppercase tracking-widest">主控顯示端</span>
+            <p className="text-blue-400/60 text-[10px] mt-2">適用於電視或大螢幕</p>
+            <div className="absolute inset-0 rounded-[32px] bg-gradient-to-b from-blue-500/5 to-transparent pointer-events-none"></div>
           </button>
           
           {/* Admin Card */}
           <button 
             onClick={() => setRole(AppRole.ADMIN)}
-            className="group relative flex flex-col items-center p-10 bg-slate-900 border-2 border-purple-500/30 rounded-3xl hover:border-purple-400 transition-all hover:-translate-y-2 hover:shadow-[0_0_40px_rgba(168,85,247,0.3)]"
+            className="group relative flex flex-col items-center p-8 bg-slate-900/80 border-2 border-purple-500/30 rounded-[32px] hover:border-purple-400 transition-all active:scale-95 shadow-xl"
           >
-            <div className="text-7xl mb-6 group-hover:scale-110 transition-transform">📱</div>
-            <span className="text-2xl font-black text-purple-100">管理控制端</span>
-            <p className="text-purple-400/60 text-sm mt-3">題目控制與分數覆核</p>
-            <div className="absolute inset-0 rounded-3xl bg-gradient-to-b from-purple-500/5 to-transparent pointer-events-none"></div>
+            <div className="text-6xl mb-4">📱</div>
+            <span className="text-xl font-black text-purple-100 uppercase tracking-widest">管理控制端</span>
+            <p className="text-purple-400/60 text-[10px] mt-2">負責出題與分數覆核</p>
+            <div className="absolute inset-0 rounded-[32px] bg-gradient-to-b from-purple-500/5 to-transparent pointer-events-none"></div>
           </button>
 
           {/* Player Card */}
-          <div className="group relative flex flex-col items-center p-10 bg-slate-900 border-2 border-emerald-500/30 rounded-3xl hover:border-emerald-400 transition-all hover:-translate-y-2 hover:shadow-[0_0_40px_rgba(16,185,129,0.3)]">
-            <div className="text-7xl mb-6 group-hover:scale-110 transition-transform">✍️</div>
-            <span className="text-2xl font-black text-emerald-100 mb-4">選手書寫端</span>
+          <div className="group relative flex flex-col items-center p-8 bg-slate-900/80 border-2 border-emerald-500/30 rounded-[32px] shadow-xl">
+            <div className="text-6xl mb-4">✍️</div>
+            <span className="text-xl font-black text-emerald-100 uppercase tracking-widest mb-4">選手書寫端</span>
             <div className="flex flex-col gap-3 w-full">
                <select 
-                 className="bg-emerald-950 border border-emerald-500/50 text-emerald-100 p-3 rounded-xl text-center font-bold focus:outline-none"
+                 className="bg-emerald-950 border border-emerald-500/50 text-emerald-100 p-4 rounded-2xl text-center font-bold focus:outline-none appearance-none"
                  value={playerIndex}
                  onChange={(e) => setPlayerIndex(parseInt(e.target.value))}
                >
-                 <option value={0}>選手 A (左側)</option>
-                 <option value={1}>選手 B (中央)</option>
-                 <option value={2}>選手 C (右側)</option>
+                 <option value={0}>選手 A (Player 1)</option>
+                 <option value={1}>選手 B (Player 2)</option>
+                 <option value={2}>選手 C (Player 3)</option>
                </select>
                <button 
                  onClick={() => setRole(AppRole.PLAYER)}
-                 className="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-black py-3 rounded-xl transition-colors shadow-lg"
+                 className="w-full bg-emerald-600 active:bg-emerald-700 text-white font-black py-4 rounded-2xl transition-all shadow-lg active:scale-95"
                >
                  進入比賽
                </button>
             </div>
-            <div className="absolute inset-0 rounded-3xl bg-gradient-to-b from-emerald-500/5 to-transparent pointer-events-none"></div>
+            <div className="absolute inset-0 rounded-[32px] bg-gradient-to-b from-emerald-500/5 to-transparent pointer-events-none"></div>
           </div>
         </div>
 
-        <div className="mt-16 text-slate-500 text-sm font-mono opacity-50 uppercase tracking-widest">
-          Version 1.2.0 | Peer-to-Peer Encrypted
+        <div className="mt-auto pb-10 text-slate-500 text-[10px] font-mono opacity-50 uppercase tracking-[0.5em] z-10 text-center">
+          P2P Connected | Built for Parties
         </div>
       </div>
     );
   }
 
   return (
-    <div className="h-screen w-screen overflow-hidden bg-black">
+    <div className="h-[100dvh] w-screen overflow-hidden bg-black">
       {role === AppRole.HOST && <HostView />}
       {role === AppRole.ADMIN && <AdminView />}
       {role === AppRole.PLAYER && <PlayerView playerIndex={playerIndex} />}
